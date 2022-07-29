@@ -5,6 +5,7 @@
     "id": "206690",
     "timezone": "Asia/Kolkata",
     "minute": 30,
+    "zoneImage": "https://your-image-url-here.com",
     "webhooks": [
       {
         "id": "<DISCORD-WEBHOOK-ID>",
@@ -19,6 +20,7 @@
     "id": "3318389",
     "timezone": "Asia/Kolkata",
     "minute": 30,
+    "zoneImage": "https://your-image-url-here.com",
     "webhooks": [
       {
         "id": "<DISCORD-WEBHOOK-ID>",
