@@ -1,11 +1,12 @@
 {
   "kolkata":{
-    "key": "<AW-KEY>",
-    "name": "Kolkata",
-    "id": "206690",
-    "timezone": "Asia/Kolkata",
-    "minute": 30,
-    "zoneImage": "https://your-image-url-here.com",
+    "key": "<AW-KEY>", // Accuweather Key (https://developer.accuweather.com/user/me/apps - Core Weather)
+    "name": "Kolkata", // This will be the display name in embed. No need to be area name from Accuweather.
+    "id": "206690", // Accuweather ID Area.
+    "timezone": "Asia/Kolkata", // Timezone (Asia, America, Europe...)
+    "minute": 30, // When it will post forecast, every xx:30 for example.
+    "color": "0xD9E0DC", // Color in Embed.
+    "zoneImage": "https://your-image-url-here.com", // Image Url in Embed.
     "webhooks": [
       {
         "id": "<DISCORD-WEBHOOK-ID>",
@@ -20,6 +21,7 @@
     "id": "3318389",
     "timezone": "Asia/Kolkata",
     "minute": 30,
+    "color": "0xD9E0DC",
     "zoneImage": "https://your-image-url-here.com",
     "webhooks": [
       {
