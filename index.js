@@ -142,8 +142,10 @@ run(async () => {
 						const description = report.join("\n");
 
 						const embed = new MessageEmbed()
-							.setColor(0xD9E0DC)
 							.setDescription(description);
+
+						if (location.color)
+							embed.setColor(location.color)
 						
 						if (location.zoneImage)
 							embed.setImage(location.zoneImage)
