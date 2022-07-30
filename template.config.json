@@ -6,6 +6,7 @@
     "timezone": "Asia/Kolkata", // Timezone (Asia, America, Europe...)
     "minute": 30, // When it will post forecast, every xx:30 for example.
     "color": "0xD9E0DC", // Color in Embed.
+    "footer": "Footer", // Footer in Embed.
     "zoneImage": "https://your-image-url-here.com", // Image Url in Embed.
     "webhooks": [
       {
@@ -22,6 +23,7 @@
     "timezone": "Asia/Kolkata",
     "minute": 30,
     "color": "0xD9E0DC",
+    "footer": "Footer",
     "zoneImage": "https://your-image-url-here.com",
     "webhooks": [
       {
