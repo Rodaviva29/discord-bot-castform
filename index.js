@@ -142,13 +142,17 @@ run(async () => {
 						const description = report.join("\n");
 
 						const embed = new MessageEmbed()
-							.setDescription(description);
+							.setDescription(description)
+							.setTimestamp();
 
 						if (location.color)
 							embed.setColor(location.color)
 						
 						if (location.zoneImage)
 							embed.setImage(location.zoneImage)
+
+						if (location.footer)
+						    embed.setFooter(location.footer)
 
 						webhookClient.send({
 							embeds: [embed]
