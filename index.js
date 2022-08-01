@@ -119,15 +119,14 @@ run(async () => {
 				// CB.tap(console.debug), // DEBUG:
 				CB.map((predictions) => {
 					const now = DateTime.local().setZone(location.timezone).startOf("hour");
-					const clocks = "ㅤ🕛 🕐 🕑 🕒 🕓 🕔 🕕 🕖 🕗 🕘 🕙 🕚".split(" ");
+					const clocks = "🕛 🕐 🕑 🕒 🕓 🕔 🕕 🕖 🕗 🕘 🕙 🕚".split(" ");
 					const report = [
-						`**${location.name}** \`${now.toISODate()}T${now.toISOTime().slice(0, 2)}\``,
-						`       ${range(0, 12, 1)
+					//	`**${location.name}** \`${now.toISODate()}T${now.toISOTime().slice(0, 2)}\``,
+						`        ↪ ${range(0, 12, 1)
 							.map((x) => now.minus({ hours: x }).hour % 12)
 							.map((hour) => clocks[hour])
-							.join("")}`,
+							.join("")}\n`,
 						...predictions.map((prediction) => `\`${prediction.hour.toISOTime().slice(0, 2)}\` ${prediction.forecasts.map((forecast) => pogo.labelEmoteMap[forecast ? forecast.weather.dominant : "none"]).join("")}`),
-						"—",
 					];
 					return report;
 				}),
@@ -140,8 +139,10 @@ run(async () => {
 					});
 					webhookClients.forEach((webhookClient) => {
 						const description = report.join("\n");
+						const now = DateTime.local().setZone(location.timezone).startOf("hour");
 
 						const embed = new MessageEmbed()
+						    .setTitle(`**${location.name}** \`${now.toISODate()}T${now.toISOTime().slice(0, 2)}\``)
 							.setDescription(description)
 							.setTimestamp();
 
@@ -154,10 +155,10 @@ run(async () => {
 						if (location.footer)
 						    embed.setFooter(location.footer)
 
+
 						webhookClient.send({
 							embeds: [embed]
-						});
-					});
+						});					});
 					// webhookClients.forEach((webhookClient) => webhookClient.send(report.join("\n")));
 				}),
 			);
